@@ -10,7 +10,7 @@ const TypingInput = () => {
     if (word === state.targetWord && state.timesUp === false) {
       console.log('word is ' + state.targetWord);
       setWord('');
-      dispatch({type: "FETCH_INIT"});
+      dispatch({type: "NEXT_WORD"});
       dispatch({type: "INCREMENT_SCORE"});
     }
   }, [word, state.targetWord, state.timesUp, dispatch]);
