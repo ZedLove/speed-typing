@@ -1,3 +1,7 @@
+// a custom React Hook to share global state across the app
+// the initial state is defined in App.js and modified
+// by the reducer function also defined in App.js
+
 import React, { createContext, useContext, useReducer } from 'react';
 
 const StateContext = createContext(null);

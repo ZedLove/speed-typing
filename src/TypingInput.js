@@ -23,9 +23,9 @@ const TypingInput = () => {
   
   if (state.timesUp === false) {
     return (
-        <form onSubmit={changeInput}>
-          <label htmlFor="word">Enter your word: </label>
-          <input id="word" name="word" type="text" value={word} onChange={changeInput} autoFocus />
+        <form className="TypingInput" onSubmit={changeInput}>
+        <label htmlFor="word">Type {state.targetWord} </label>
+          <input className="word" name="word" type="text" value={word} onChange={changeInput} autoFocus />
         </form>
     );
   }

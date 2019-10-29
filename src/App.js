@@ -7,7 +7,7 @@ import Score from './Score.js';
 import './App.css';
 
 const initialState = {score:      0,
-                      targetWord: 'wat',
+                      targetWord: 'wat', // TODO - this word should not be hard-coded and should instead be fetched from the API
                       timesUp:    false,
                       isLoading:  false,
                       isError:    false};
@@ -17,7 +17,7 @@ function reducer(state, action) {
     case "NEXT_WORD":
     return {
       ...state,
-      targetWord: 'wot',
+      targetWord: 'wot', // TODO - this word should not be hard-coded and should instead be fetched from the API
     };
     case "INCREMENT_SCORE":
       return {

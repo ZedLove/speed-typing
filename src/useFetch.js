@@ -1,3 +1,10 @@
+// This is an attempt to create a custom hook that would
+// fetch data from an endpoint (in this case, hard-coded random text)
+
+// I got stuck trying to figure out how to tie this into the
+// React Hooks pattern, specifically trying to get it to populate
+// my shared global state in useGlobalState
+
 import { useState, useEffect } from 'react';
 import useGlobalState from './useGlobalState.js';
 

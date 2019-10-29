@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useGlobalState from './useGlobalState.js';
 
 const Countdown = () => {
-  const [seconds, setSeconds] = useState(5);
+  const [seconds, setSeconds] = useState(30);
   const [state, dispatch] = useGlobalState();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Countdown = () => {
   
   if (state.timesUp === false) {
     return (
-        <div className="time">{seconds}s</div>
+        <div className="time">Time Remaining: {seconds}s</div>
     );
   }
   else {
