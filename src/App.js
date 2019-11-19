@@ -1,5 +1,4 @@
 import React from 'react';
-import useFetch from './useFetch.js';
 import useGlobalState, { Provider } from "./useGlobalState.js";
 import Countdown from './Countdown.js';
 import TypingInput from './TypingInput.js';
@@ -7,7 +6,7 @@ import Score from './Score.js';
 import './App.css';
 
 const initialState = {score:      0,
-                      targetWord: 'wat', // TODO - this word should not be hard-coded and should instead be fetched from the API
+                      targetWord: null,
                       timesUp:    false,
                       isLoading:  false,
                       isError:    false};
@@ -17,7 +16,7 @@ function reducer(state, action) {
     case "NEXT_WORD":
     return {
       ...state,
-      targetWord: 'wot', // TODO - this word should not be hard-coded and should instead be fetched from the API
+      targetWord: action.payload
     };
     case "INCREMENT_SCORE":
       return {
@@ -34,7 +33,7 @@ function reducer(state, action) {
   }
 }
 
-function App() {
+const App = () => {
 
   return (
     <Provider reducer={reducer} initialState={initialState}>
