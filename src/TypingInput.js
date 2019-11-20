@@ -7,12 +7,11 @@ import useGlobalState from './useGlobalState.js';
 // this function returns a random word of at least
 // three characters in length
 const pluckWordFromQuote = (quote) => {
-  const re = /(\w+)/g;
+  const re = /([a-zA-Z]{4,})/g; // looking for only letters, 4 or more chars
   const words = quote.split(" ").reduce((acc, w) => {
-    // only take words, only > 3 chars
-    const cleansed = w.toLowerCase().match(re)[0] || '';
-    if (cleansed.length > 3) {
-      acc.push(cleansed);
+    const cleansed = w.toLowerCase().match(re) || null;
+    if (cleansed) {
+      acc.push(cleansed[0]);
     }
     return acc;
   }, []);
@@ -27,7 +26,10 @@ const fetchNewWord = (url, dispatch) => {
       const newTarget = pluckWordFromQuote(res.quote);
       dispatch({type: 'NEXT_WORD', payload: newTarget});
     })
-    .catch(() => dispatch({type: 'FETCH_ERROR'})) // TODO - error case
+    .catch((e) => {
+      console.error(e);
+      dispatch({type: 'FETCH_ERROR'})
+    }) // TODO - error case
 }
 
 const TypingInput = () => {

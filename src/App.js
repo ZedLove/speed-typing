@@ -28,6 +28,9 @@ function reducer(state, action) {
         ...state,
         timesUp: !state.timesUp,
       };
+    case "FETCH_ERROR":
+    console.log('fetch error');
+      return state; // TODO - get new word or display error
     default:
       return state;
   }
