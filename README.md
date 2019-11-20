@@ -1,6 +1,5 @@
-```
-[![Deployment Status](https://api.netlify.com/api/v1/badges/475e1486-7ce9-4d3d-9ab0-c6a3dfdddae4/deploy-status)](https://app.netlify.com/sites/zedlove-speedtyping/deploys)
-```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/475e1486-7ce9-4d3d-9ab0-c6a3dfdddae4/deploy-status)](https://app.netlify.com/sites/zedlove-speedtyping/deploys)
+
 # Speed Typing
 
 A small app to try using React Hooks. 
