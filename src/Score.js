@@ -1,11 +1,12 @@
 import React from 'react';
 import useGlobalState from './useGlobalState.js';
+import './Score.css';
 
 const Score = () => {
   const [state] = useGlobalState();
 
   return (
-      <div>Score: {state.score}</div>
+      <h3 className="Score">{state.score}pts</h3>
   );
 }
 

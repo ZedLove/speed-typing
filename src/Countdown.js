@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useGlobalState from './useGlobalState.js';
+import './Countdown.css';
 
 const Countdown = () => {
   const [seconds, setSeconds] = useState(30);
@@ -13,7 +14,6 @@ const Countdown = () => {
       }, 1000);
     } else if (seconds === 0) {
       dispatch({type: "INVALIDATE_TIMER"});
-      console.log('countdown done');
       setSeconds(0);
       clearInterval(interval);
     }
@@ -22,11 +22,11 @@ const Countdown = () => {
   
   if (state.timesUp === false) {
     return (
-        <div className="time">Time Remaining: {seconds}s</div>
+        <h3 className="Countdown">{seconds}s</h3>
     );
   }
   else {
-    return (<div></div>);
+    return (<h3 className="Countdown"></h3>);
   }
 };
 

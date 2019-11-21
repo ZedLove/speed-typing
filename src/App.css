@@ -9,28 +9,24 @@
     color: white;
 }
 
-.App * { margin: 1vh auto;}
-
-.TypingInput {
-    padding: 1vh;
-}
-
-.TypingInput > label {
-    display: block;
-    margin: 1vh auto;
-}
-
-.TypingInput > .word {
-    display: block;
+.App-header {
     width: 100%;
-    height: 5vh;
-    outline: none;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    background: none;
-    border-top: none;
-    border-right: none;
-    border-bottom: 2px solid white;
-    border-left: none;
+    padding: 3vh;
+    background: #ece9e9;
+}
+
+.App-header > h1 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 6vh;
+    text-shadow: 3px 5px 2px #474747;
+}
+
+.App-header > .display {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    color: #616161;
+    justify-content: center;
+    text-shadow: #e0e0e0 1px 1px 0;
 }

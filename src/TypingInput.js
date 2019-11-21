@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useGlobalState from './useGlobalState.js';
+import './TypingInput.css';
 
 
 // the heroku app for random words appears to be down.
@@ -24,6 +25,7 @@ const fetchNewWord = (url, dispatch) => {
     .then(res => res.json())
     .then(res => {
       const newTarget = pluckWordFromQuote(res.quote);
+      // TODO - handle no results
       dispatch({type: 'NEXT_WORD', payload: newTarget});
     })
     .catch((e) => {
@@ -58,8 +60,8 @@ const TypingInput = () => {
   
   if (state.timesUp === false) {
     return (
-        <form className="TypingInput" onSubmit={changeInput}>
-        <label htmlFor="word">Type {state.targetWord} </label>
+        <form className="TypingInput" onSubmit={changeInput} autocomplete="off">
+        <label htmlFor="word">{state.targetWord} </label>
           <input className="word" name="word" type="text" value={word} onChange={changeInput} autoFocus />
         </form>
     );

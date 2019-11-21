@@ -8,8 +8,9 @@ Deployed live here: [https://zedlove-speedtyping.netlify.com/](https://zedlove-s
 Plucks a word from a fetched quote via [kanye.rest](https://kanye.rest/) to be typed by the user. Once the target word is typed, a new word is displayed. You have 30s to type as many words as you can.
 
 
-## Running in development
-use `yarn start`
+## Commands
+For development: `yarn start`
+For production build: `yarn build`
 
 ## Current functionality
 - displays a target word to be typed (minimum length of 4 characters)
